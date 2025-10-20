@@ -109,19 +109,40 @@ Cooling the amateur improves diversity but can harm next-token likelihood.
 **Qualitative examples:**  
 
 **Prompt:** “Headlam served as Officer Commanding North-Western Area in 1946… during the Malayan Emergency …”  
-**Best ($T = 0.5$, $W = max$):** “he was Commanding Officer of the 1st Squadron, flying Fairey P-40s… career spanned over 50 years… Royal Flying Corps… multiple RFC Squadrons…”.
-- The continuation introduces concrete entities and a clear timeline, for example references to P-40s, the Royal Flying Corps, and multiple RFC squadrons.  
-**Worst ($T = 1.5$, $W = max$):** “he was the Commanding Officer of the Western Area… he was appointed as the Commanding Officer of the Western Area… he was appointed as the Commanding Officer…”.
+**Best ($T = 0.5$, $W = max$):** 
+- “he was Commanding Officer of the 1st Squadron, flying Fairey P-40s… career spanned over 50 years… Royal Flying Corps… multiple RFC Squadrons…”.
+- The continuation introduces concrete entities and a clear timeline, for example references to P-40s, the Royal Flying Corps, and multiple RFC squadrons.
+  
+**Worst ($T = 1.5$, $W = max$):**
+- “he was the Commanding Officer of the Western Area… he was appointed as the Commanding Officer of the Western Area… he was appointed as the Commanding Officer…”
 - The continuation collapses into a repetitive loop, repeating clauses such as “he was appointed…” with minimal lexical variety.
 
+
+
+ 
+
 **Prompt:** “After completing a conversion course, Headlam was assigned to the Seaplane Squadron at Point Cook…”  
-**Best ($T = 0.5$, $W = max$):**  “flew with his squadron until 1943… ordered to Australia… married Margaret… D-Day recall to England… posted to RAF Station…” . 
-- The text progresses coherently, connecting events with sensible transitions, such as squadron activity through 1943, orders to Australia, marriage, a D-Day recall, and a posting to an RAF station.  
-**Worst ($T = 1.5$, $W = max$):** “the squadron was the only unit in the area to have a dedicated radar station… the only unit in the area to have a dedicated radar station…” “the squadron was the only unit in the area to have a dedicated radar station… the only unit in the area to have a dedicated radar station…”. The text becomes redundant, repeating the same clause about a radar station without adding new information.
+**Best ($T = 0.5$, $W = max$):**  
+- “flew with his squadron until 1943… ordered to Australia… married Margaret… D-Day recall to England… posted to RAF Station…” . 
+- The text progresses coherently, connecting events with sensible transitions, such as squadron activity through 1943, orders to Australia, marriage, a D-Day recall, and a posting to an RAF station.
+  
+**Worst ($T = 1.5$, $W = max$):** 
+- “the squadron was the only unit in the area to have a dedicated radar station… the only unit in the area to have a dedicated radar station…” “the squadron was the only unit in the area to have a dedicated radar station… the only unit in the area to have a dedicated radar station…”.
+- The text becomes redundant, repeating the same clause about a radar station without adding new information.
+
+
+
+  
+
 
 **Prompt:** “Headlam completed a flying instructors course in July 1936 and joined the staff of No. 1 FTS…”  
-**Best ($T = 0.5$, $W = max$):**  “served as pilot training officer… posted to Gander… instructor until the end of the war… oxygen mask slipped during a crash at sea…”. The continuation stays on topic with plausible training and operations details, postings, and a consistent timeline.  
-**Worst ($T = 1.5$, $W = max$):** “flew first combat mission… awarded the Distinguished Flying Cross… killed in action… widow awarded the Victoria Cross…”. The continuation drifts into off-topic and sensational claims, producing content that reads less grounded in the given context.
+**Best ($T = 0.5$, $W = max$):**  
+- “served as pilot training officer… posted to Gander… instructor until the end of the war… oxygen mask slipped during a crash at sea…”.
+- The continuation stays on topic with plausible training and operations details, postings, and a consistent timeline.
+  
+**Worst ($T = 1.5$, $W = max$):**
+- “flew first combat mission… awarded the Distinguished Flying Cross… killed in action… widow awarded the Victoria Cross…”.
+- The continuation drifts into off-topic and sensational claims, producing content that reads less grounded in the given context.
 
 
 
