@@ -1,0 +1,9 @@
+transformers==4.45.2
+datasets>=2.19.0
+accelerate>=0.34.2
+evaluate>=0.4.2
+tqdm>=4.66.5
+mauve-text>=0.3.0
+pandas>=2.0.0
+torch>=2.2
+matplotlib>=3.8
