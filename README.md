@@ -3,17 +3,17 @@
 This project extends from  **Li et al., 2022: _Contrastive Decoding: Open-ended Text Generation as Optimization_**  
 PDF: https://arxiv.org/pdf/2210.15097
 
-## Contrastive Decoding:
+## Contrastive Decoding
 
 **Intuition:** A strong LM (expert) is generally more reliable than a small LM (amateur). Failure modes that show up in the expert are usually more frequent in the amateur. We can use that difference to guide decoding: prefer tokens the expert likes and the amateur does not.
 
-**Step 1 — Plausibility mask.** CCompute expert next-token log-probs and mask out tokens that are implausible for the expert. Only keep tokens that pass an adaptive threshold relative to the expert’s own maximum at this step:
+**Step 1: Plausibility mask.** CCompute expert next-token log-probs and mask out tokens that are implausible for the expert. Only keep tokens that pass an adaptive threshold relative to the expert’s own maximum at this step:
 
 $$
 \mathcal{F}_t=\{\,w \mid P_E(w \mid x_{<t}) \ge \alpha \cdot \max_{u} P_E(u \mid x_{<t}) \,\}.
 $$
 
-**Step 2 — Contrastive score.** Among the expert-plausible candidates $\mathcal{F}_t$, score each token by:
+**Step 2: Contrastive score.** Among the expert-plausible candidates $\mathcal{F}_t$, score each token by:
 
 $$
 \mathcal{s}_t = log P_E (w | x_{<t}) - \beta log p_A (w | x_{<t}) = log (\frac{P_E(w | x_{<t})}{P_A(w | x_{<t})^\beta})
