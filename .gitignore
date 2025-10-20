@@ -1,15 +1,8 @@
-# Bytecode & caches
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-
-# Local environments & secrets
 .venv/
 .env
-
-# Heavy run artifacts (not tracked)
 outputs/
 prepared_data/*.jsonl
-
-# OS cruft
 .DS_Store
